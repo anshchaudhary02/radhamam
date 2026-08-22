@@ -1,0 +1,50 @@
+*{ margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; } body{ background:linear-gradient(135deg,#ffe4ec,#fff8fb); overflow-x:hidden; } /* Hero Section */ .hero{ height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:20px; } .hero h1{ font-size:55px; color:#ff3f81; } .hero h2{ margin-top:10px; font-size:36px; color:#c2185b; } .hero p{ margin-top:20px; font-size:18px; color:#444; } button{ margin-top:30px; padding:15px 35px; border:none; border-radius:40px; background:#ff4d88; color:white; font-size:18px; cursor:pointer; transition:0.3s; } button:hover{ transform:scale(1.08); } .hidden{ display:none; } #surprise{ padding:60px 20px; } .card{ max-width:700px; margin:auto; background:white; padding:30px; border-radius:25px; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,.12); animation:fadeIn 1s ease; } .card img{ width:220px; height:220px; object-fit:cover; border-radius:50%; border:6px solid #ff7aa8; } .card h2{ margin-top:20px; color:#d81b60; } .card p{ margin-top:20px; line-height:1.9; color:#444; } .card h3{ margin-top:25px; color:#ff3f81; } /* Hearts */ .hearts{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+.hearts span{
+    position:absolute;
+    bottom:-100px;
+    font-size:30px;
+    animation:heartFloat 4s linear infinite;
+    opacity:0.9;
+}
+
+/* Different positions */
+.hearts span:nth-child(1){left:5%; animation-delay:0s;}
+.hearts span:nth-child(2){left:12%; animation-delay:0.5s;}
+.hearts span:nth-child(3){left:18%; animation-delay:1s;}
+.hearts span:nth-child(4){left:25%; animation-delay:1.5s;}
+.hearts span:nth-child(5){left:32%; animation-delay:0.2s;}
+.hearts span:nth-child(6){left:40%; animation-delay:0.8s;}
+.hearts span:nth-child(7){left:48%; animation-delay:1.2s;}
+.hearts span:nth-child(8){left:55%; animation-delay:0.3s;}
+.hearts span:nth-child(9){left:62%; animation-delay:1.7s;}
+.hearts span:nth-child(10){left:70%; animation-delay:0.7s;}
+.hearts span:nth-child(11){left:78%; animation-delay:1.1s;}
+.hearts span:nth-child(12){left:84%; animation-delay:0.4s;}
+.hearts span:nth-child(13){left:90%; animation-delay:1.4s;}
+.hearts span:nth-child(14){left:95%; animation-delay:0.9s;}
+.hearts span:nth-child(15){left:50%; animation-delay:1.8s;}
+
+@keyframes heartFloat{
+    0%{
+        transform:translateY(0) scale(0.8);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh) scale(1.4);
+        opacity:0;
+    }
+}} @keyframes float{ 0%{ transform:translateY(0); opacity:0; } 50%{ opacity:1; } 100%{ transform:translateY(-110vh); opacity:0; } } @keyframes fadeIn{ from{ opacity:0; transform:translateY(30px); } to{ opacity:1; transform:translateY(0); } }
