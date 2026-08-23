@@ -3,246 +3,232 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Teachers' Day Radha Mam</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+<title>Radha Mam - A New Chapter</title>
 <style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
+body{background:#f8f3e8;color:#333;text-align:center;overflow-x:hidden}
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
+background:linear-gradient(135deg,#fffdf5,#f7efe0)}
+.hero h1{font-size:60px;color:#6b4f3a}
+.hero p{font-size:22px;margin:15px 0}
+.btn{background:#6b4f3a;color:#fff;border:none;padding:15px 30px;border-radius:30px;cursor:pointer}
+.hidden{display:none}
+#loader{height:100vh;display:flex;justify-content:center;align-items:center;font-size:28px;color:#6b4f3a}
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+.page{
+max-width:900px;
+margin:30px auto;
+background:white;
+padding:35px;
+border-radius:20px;
+box-shadow:0 10px 20px rgba(0,0,0,.08);
 }
 
-body{
-    background:linear-gradient(135deg,#ffe4ec,#fff8fb);
-    overflow-x:hidden;
+.polaroids{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+padding:20px;
 }
 
-/* Floating Hearts */
-
-.hearts{
-    position:fixed;
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    pointer-events:none;
-    overflow:hidden;
+.polaroid{
+background:white;
+padding:10px 10px 25px;
+width:260px;
+box-shadow:0 6px 15px rgba(0,0,0,.15);
+transform:rotate(-2deg);
 }
 
-.hearts span{
-    position:absolute;
-    bottom:-100px;
-    font-size:30px;
-    animation:heartFloat 4s linear infinite;
-    opacity:0.9;
+.polaroid:nth-child(2){transform:rotate(3deg)}
+.polaroid:nth-child(3){transform:rotate(-4deg)}
+
+.polaroid img{
+width:100%;
+height:auto;
 }
 
-.hearts span:nth-child(1){left:5%; animation-delay:0s;}
-.hearts span:nth-child(2){left:12%; animation-delay:.5s;}
-.hearts span:nth-child(3){left:18%; animation-delay:1s;}
-.hearts span:nth-child(4){left:25%; animation-delay:1.5s;}
-.hearts span:nth-child(5){left:32%; animation-delay:.2s;}
-.hearts span:nth-child(6){left:40%; animation-delay:.8s;}
-.hearts span:nth-child(7){left:48%; animation-delay:1.2s;}
-.hearts span:nth-child(8){left:55%; animation-delay:.3s;}
-.hearts span:nth-child(9){left:62%; animation-delay:1.7s;}
-.hearts span:nth-child(10){left:70%; animation-delay:.7s;}
-.hearts span:nth-child(11){left:78%; animation-delay:1.1s;}
-.hearts span:nth-child(12){left:84%; animation-delay:.4s;}
-.hearts span:nth-child(13){left:90%; animation-delay:1.4s;}
-.hearts span:nth-child(14){left:95%; animation-delay:.9s;}
-.hearts span:nth-child(15){left:50%; animation-delay:1.8s;}
-
-@keyframes heartFloat{
-    0%{
-        transform:translateY(0) scale(.8);
-        opacity:0;
-    }
-    20%{
-        opacity:1;
-    }
-    100%{
-        transform:translateY(-120vh) scale(1.4);
-        opacity:0;
-    }
+.report{
+max-width:600px;
+margin:auto;
+text-align:left;
+line-height:2;
+font-size:18px;
 }
 
-/* Hero Section */
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
+.notes{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+padding:20px;
 }
 
-.hero h1{
-    font-size:55px;
-    color:#ff3f81;
+.note{
+padding:20px;
+background:#fff9a8;
+border-radius:8px;
+box-shadow:0 5px 12px rgba(0,0,0,.1);
+font-weight:bold;
 }
 
-.hero h2{
-    font-size:36px;
-    color:#c2185b;
-    margin-top:10px;
+.envelope{
+padding:40px;
 }
 
-.hero p{
-    margin-top:20px;
-    font-size:20px;
-    color:#444;
+.footer{
+background:#203020;
+color:white;
+padding:70px 20px;
+margin-top:40px;
 }
 
-button{
-    margin-top:30px;
-    padding:15px 35px;
-    border:none;
-    border-radius:40px;
-    background:#ff4d88;
-    color:white;
-    font-size:18px;
-    cursor:pointer;
-    transition:.3s;
+.chalk{
+font-size:32px;
+font-family:cursive;
 }
-
-button:hover{
-    transform:scale(1.08);
-}
-
-.hidden{
-    display:none;
-}
-
-#surprise{
-    padding:50px 20px;
-}
-
-.card{
-    max-width:800px;
-    margin:auto;
-    background:white;
-    border-radius:25px;
-    padding:35px;
-    text-align:center;
-    box-shadow:0 10px 30px rgba(0,0,0,.12);
-    animation:fadeIn 1s ease;
-}
-
-.card img{
-    width:230px;
-    height:230px;
-    object-fit:cover;
-    border-radius:50%;
-    border:6px solid #ff7aa8;
-}
-
-.card h2{
-    margin-top:20px;
-    color:#d81b60;
-}
-
-.card p{
-    margin-top:20px;
-    line-height:2;
-    color:#444;
-    font-size:17px;
-}
-
-.card h3{
-    margin-top:25px;
-    color:#ff3f81;
-}
-
-@keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
 </style>
 </head>
-
 <body>
 
-<div class="hearts">
-<span>❤️</span>
-<span>💖</span>
-<span>💗</span>
-<span>💕</span>
-<span>❤️</span>
-<span>💖</span>
-<span>💗</span>
-<span>💕</span>
-<span>❤️</span>
-<span>💖</span>
-<span>💗</span>
-<span>💕</span>
-<span>❤️</span>
-<span>💖</span>
-<span>💗</span>
+<div class="hero" id="hero">
+<h1>📖 A New Chapter Begins...</h1>
+<p>For Our Class Teacher, Radha Mam ❤️</p>
+<button class="btn" onclick="startSite()">Open The Journal ✨</button>
 </div>
 
-<section class="hero">
+<div id="loader" class="hidden">
+<h2 id="loadText"></h2>
+</div>
 
-<h1>Happy Teachers' Day 🌸</h1>
+<div id="content" class="hidden">
 
-<h2>Radha Mam 💖</h2>
+<div class="page">
+<h2>📚 Chapter 1 : First Impression</h2>
+<br>
+<p style="line-height:2">
+Dear Radha Mam,<br><br>
 
-<p>
-✨ A Small Surprise For The Most Amazing Class Teacher ✨
+Sometimes people take months to leave an impression,
+but you managed to do it in a much shorter time.<br><br>
+
+Even though you recently became our class teacher,
+your friendly nature and positive attitude have already made the classroom feel more comfortable and welcoming.<br><br>
+
+Happy Teachers' Day! 🌸
 </p>
+</div>
 
-<button onclick="showSurprise()">
-🎁 Open Surprise
+<div class="page">
+<h2>📸 Chapter 2 : Memories Board</h2>
+
+<div class="polaroids">
+
+<div class="polaroid">
+<img src="ansh.jpg">
+<p>📖 A New Journey Begins</p>
+</div>
+
+<div class="polaroid">
+<img src="radha1.jpg">
+<p>🌸 Always Positive</p>
+</div>
+
+<div class="polaroid">
+<img src="radha2.jpg">
+<p>😊 Friendly With Everyone</p>
+</div>
+
+<div class="polaroid">
+<img src="radha3.jpg">
+<p>❤️ Best Class Teacher Vibes</p>
+</div>
+
+</div>
+</div>
+
+<div class="page">
+<h2>🎯 Chapter 3 : Class Teacher Report Card</h2>
+<br>
+
+<div class="report">
+Friendliness .......... A+<br>
+Supportiveness ........ A+<br>
+Positive Vibes ........ A+<br>
+Patience .............. A+<br>
+Class Teacher Energy .. A+<br>
+Overall Grade ......... A++++ ❤️
+</div>
+
+</div>
+
+<div class="page">
+<h2>💌 Chapter 4 : Notes Board</h2>
+
+<div class="notes">
+<div class="note">🌸 Positive Energy</div>
+<div class="note">😊 Friendly Nature</div>
+<div class="note">📚 Amazing Class Teacher</div>
+<div class="note">✨ Inspiring Personality</div>
+</div>
+</div>
+
+<div class="page envelope">
+<h2>🎁 Final Letter</h2>
+<br>
+<button class="btn" onclick="document.getElementById('letter').classList.toggle('hidden')">
+Open Letter ❤️
 </button>
 
-</section>
+<div id="letter" class="hidden" style="margin-top:25px;line-height:2">
+Thank you for making the class feel comfortable,
+supported and positive.<br><br>
 
-<section id="surprise" class="hidden">
+Wishing you happiness, success and lots of smiles.<br><br>
 
-<div class="card">
+Happy Teachers' Day, Radha Mam ❤️<br><br>
 
-<img src="ansh.jpg" alt="Ansh">
-
-<h2>Dear Radha Mam ❤️</h2>
-
-<p>
-Dear Radha Mam ❤️
-
-Bhale hi aap recently hamari class teacher bani hain, lekin itne kam time me hi aapne sab students ke saath ek bahut accha connection bana liya hai.
-
-Aapke saath baat karna hamesha comfortable lagta hai aur aapki positive energy classroom ka environment aur bhi better bana deti hai. Aap har student ko samajhne aur encourage karne ki jo koshish karti hain, woh sach me bahut appreciable hai.
-
-Thank you for being such a wonderful class teacher.
-
-Wishing you a very Happy Teachers' Day! 🌸✨
-
-— Ansh ❤️
+— Ansh
+</div>
 </div>
 
-</section>
+<div class="footer">
+<div class="chalk">
+Some teachers teach subjects.<br><br>
+
+Some teachers make a classroom feel like home.<br><br>
+
+Happy Teachers' Day ❤️
+</div>
+</div>
+
+</div>
 
 <script>
-function showSurprise(){
-    document.getElementById("surprise").classList.remove("hidden");
-    document.getElementById("surprise").scrollIntoView({
-        behavior:"smooth"
-    });
+const msgs=[
+"Opening Journal... 📖",
+"Loading Memories... 🌸",
+"Preparing Notes... ✨",
+"Ready ❤️"
+];
+
+function startSite(){
+document.getElementById('hero').style.display='none';
+document.getElementById('loader').classList.remove('hidden');
+
+let i=0;
+
+let t=setInterval(()=>{
+document.getElementById('loadText').innerHTML=msgs[i++];
+if(i===msgs.length){
+clearInterval(t);
+setTimeout(()=>{
+document.getElementById('loader').style.display='none';
+document.getElementById('content').classList.remove('hidden');
+},800);
+}
+},900);
 }
 </script>
 
 </body>
 </html>
-```
