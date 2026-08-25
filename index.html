@@ -4,87 +4,83 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Radha Mam - A New Chapter</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Cormorant+Garamond:wght@400;600&family=Caveat:wght@700&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
-body{background:#f8f3e8;color:#333;text-align:center;overflow-x:hidden}
-.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
-background:linear-gradient(135deg,#fffdf5,#f7efe0)}
-.hero h1{font-size:60px;color:#6b4f3a}
-.hero p{font-size:22px;margin:15px 0}
-.btn{background:#6b4f3a;color:#fff;border:none;padding:15px 30px;border-radius:30px;cursor:pointer}
-.hidden{display:none}
-#loader{height:100vh;display:flex;justify-content:center;align-items:center;font-size:28px;color:#6b4f3a}
-
-.page{
-max-width:900px;
-margin:30px auto;
-background:white;
-padding:35px;
-border-radius:20px;
-box-shadow:0 10px 20px rgba(0,0,0,.08);
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+background:#f5eee2;
+color:#3d2b1f;
+overflow-x:hidden;
+font-family:'Cormorant Garamond',serif;
 }
-
-.polaroids{
+.hero{
+height:100vh;
 display:flex;
-flex-wrap:wrap;
+flex-direction:column;
 justify-content:center;
-gap:25px;
-padding:20px;
+align-items:center;
+text-align:center;
+background:linear-gradient(135deg,#f8f0df,#eadbc3);
+position:relative;
 }
-
+.hero:before{
+content:'';
+position:absolute;inset:0;
+background:radial-gradient(circle,rgba(255,255,255,.35),transparent 60%);
+animation:zoom 8s infinite alternate;
+}
+@keyframes zoom{from{transform:scale(1)}to{transform:scale(1.08)}}
+h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,7vw,5rem);z-index:1}
+.hero p{font-size:1.6rem;z-index:1}
+.btn{
+margin-top:25px;padding:14px 30px;border:none;border-radius:40px;
+background:#6b4f3a;color:#fff;cursor:pointer;z-index:1
+}
+.hidden{display:none}
+#loader{height:100vh;display:flex;justify-content:center;align-items:center;font-size:2rem;color:#6b4f3a}
+.page{
+max-width:1000px;margin:40px auto;background:#fffdf8;padding:40px;border-radius:24px;
+box-shadow:0 20px 40px rgba(0,0,0,.08);
+opacity:0;transform:translateY(40px);transition:1s;
+}
+.page.show{opacity:1;transform:none}
+.page h2{font-family:'Playfair Display',serif;margin-bottom:15px}
+.polaroids{display:flex;flex-wrap:wrap;justify-content:center;gap:25px}
 .polaroid{
-background:white;
-padding:10px 10px 25px;
-width:260px;
-box-shadow:0 6px 15px rgba(0,0,0,.15);
-transform:rotate(-2deg);
+background:white;padding:10px 10px 25px;width:250px;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+transition:.4s;
 }
-
-.polaroid:nth-child(2){transform:rotate(3deg)}
-.polaroid:nth-child(3){transform:rotate(-4deg)}
-
-.polaroid img{
-width:100%;
-height:auto;
-}
-
-.report{
-max-width:600px;
-margin:auto;
-text-align:left;
-line-height:2;
-font-size:18px;
-}
-
-.notes{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:20px;
-padding:20px;
-}
-
+.polaroid:hover{transform:translateY(-10px) rotate(2deg)}
+.polaroid img{width:100%}
+.report{line-height:2;font-size:1.25rem}
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
 .note{
-padding:20px;
-background:#fff9a8;
-border-radius:8px;
-box-shadow:0 5px 12px rgba(0,0,0,.1);
+background:#fff3a8;padding:20px;border-radius:12px;
+box-shadow:0 8px 18px rgba(0,0,0,.08);
 font-weight:bold;
 }
-
-.envelope{
-padding:40px;
+.envelopeWrap{text-align:center}
+.envelope{font-size:120px;cursor:pointer;transition:.3s}
+.envelope:hover{transform:scale(1.05)}
+.letter{
+display:none;margin-top:20px;background:#fff;padding:30px;border-radius:18px;
+line-height:2;box-shadow:0 10px 25px rgba(0,0,0,.08)
 }
-
 .footer{
-background:#203020;
-color:white;
-padding:70px 20px;
-margin-top:40px;
+min-height:100vh;
+background:#24301f;
+color:#fff;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:30px;
 }
-
 .chalk{
-font-size:32px;
-font-family:cursive;
+font-family:'Caveat',cursive;
+font-size:clamp(2rem,5vw,4rem);
+line-height:1.6;
 }
 </style>
 </head>
@@ -96,60 +92,32 @@ font-family:cursive;
 <button class="btn" onclick="startSite()">Open The Journal ✨</button>
 </div>
 
-<div id="loader" class="hidden">
-<h2 id="loadText"></h2>
-</div>
+<div id="loader" class="hidden"><h2 id="loadText"></h2></div>
 
 <div id="content" class="hidden">
 
 <div class="page">
 <h2>📚 Chapter 1 : First Impression</h2>
-<br>
-<p style="line-height:2">
+<p style="line-height:2;font-size:1.3rem">
 Dear Radha Mam,<br><br>
-
-Sometimes people take months to leave an impression,
-but you managed to do it in a much shorter time.<br><br>
-
-Even though you recently became our class teacher,
-your friendly nature and positive attitude have already made the classroom feel more comfortable and welcoming.<br><br>
-
+Sometimes people take months to leave an impression, but you managed to do it in a much shorter time.<br><br>
+Even though you recently became our class teacher, your friendly nature and positive attitude have already made the classroom feel more comfortable and welcoming.<br><br>
 Happy Teachers' Day! 🌸
 </p>
 </div>
 
 <div class="page">
 <h2>📸 Chapter 2 : Memories Board</h2>
-
 <div class="polaroids">
-
-<div class="polaroid">
-<img src="ansh.jpg">
-<p>📖 A New Journey Begins</p>
-</div>
-
-<div class="polaroid">
-<img src="radha1.jpg">
-<p>🌸 Always Positive</p>
-</div>
-
-<div class="polaroid">
-<img src="radha2.jpg">
-<p>😊 Friendly With Everyone</p>
-</div>
-
-<div class="polaroid">
-<img src="radha3.jpg">
-<p>❤️ Best Class Teacher Vibes</p>
-</div>
-
+<div class="polaroid"><img src="ansh.jpg"><p>📖 A New Journey Begins</p></div>
+<div class="polaroid"><img src="radha1.jpg"><p>🌸 Always Positive</p></div>
+<div class="polaroid"><img src="radha2.jpg"><p>😊 Friendly With Everyone</p></div>
+<div class="polaroid"><img src="radha3.jpg"><p>❤️ Best Class Teacher Vibes</p></div>
 </div>
 </div>
 
 <div class="page">
-<h2>🎯 Chapter 3 : Class Teacher Report Card</h2>
-<br>
-
+<h2>🎯 Chapter 3 : Class Teacher Report</h2>
 <div class="report">
 Friendliness .......... A+<br>
 Supportiveness ........ A+<br>
@@ -158,12 +126,10 @@ Patience .............. A+<br>
 Class Teacher Energy .. A+<br>
 Overall Grade ......... A++++ ❤️
 </div>
-
 </div>
 
 <div class="page">
 <h2>💌 Chapter 4 : Notes Board</h2>
-
 <div class="notes">
 <div class="note">🌸 Positive Energy</div>
 <div class="note">😊 Friendly Nature</div>
@@ -172,31 +138,24 @@ Overall Grade ......... A++++ ❤️
 </div>
 </div>
 
-<div class="page envelope">
+<div class="page">
 <h2>🎁 Final Letter</h2>
-<br>
-<button class="btn" onclick="document.getElementById('letter').classList.toggle('hidden')">
-Open Letter ❤️
-</button>
-
-<div id="letter" class="hidden" style="margin-top:25px;line-height:2">
-Thank you for making the class feel comfortable,
-supported and positive.<br><br>
-
+<div class="envelopeWrap">
+<div class="envelope" onclick="openLetter()">💌</div>
+<p>Click the envelope</p>
+<div id="letter" class="letter">
+Thank you for making the class feel comfortable, supported and positive.<br><br>
 Wishing you happiness, success and lots of smiles.<br><br>
-
 Happy Teachers' Day, Radha Mam ❤️<br><br>
-
 — Ansh
+</div>
 </div>
 </div>
 
 <div class="footer">
 <div class="chalk">
 Some teachers teach subjects.<br><br>
-
 Some teachers make a classroom feel like home.<br><br>
-
 Happy Teachers' Day ❤️
 </div>
 </div>
@@ -204,31 +163,27 @@ Happy Teachers' Day ❤️
 </div>
 
 <script>
-const msgs=[
-"Opening Journal... 📖",
-"Loading Memories... 🌸",
-"Preparing Notes... ✨",
-"Ready ❤️"
-];
-
+const msgs=["Opening Journal... 📖","Loading Memories... 🌸","Preparing Notes... ✨","Ready ❤️"];
 function startSite(){
-document.getElementById('hero').style.display='none';
-document.getElementById('loader').classList.remove('hidden');
-
+hero.style.display='none';
+loader.classList.remove('hidden');
 let i=0;
-
 let t=setInterval(()=>{
-document.getElementById('loadText').innerHTML=msgs[i++];
+loadText.innerHTML=msgs[i++];
 if(i===msgs.length){
 clearInterval(t);
 setTimeout(()=>{
-document.getElementById('loader').style.display='none';
-document.getElementById('content').classList.remove('hidden');
+loader.style.display='none';
+content.classList.remove('hidden');
+document.querySelectorAll('.page').forEach(p=>obs.observe(p));
 },800);
 }
 },900);
 }
+function openLetter(){document.getElementById('letter').style.display='block';}
+const obs=new IntersectionObserver(es=>{
+es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})
+});
 </script>
-
 </body>
 </html>
